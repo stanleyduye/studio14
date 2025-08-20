@@ -1,13 +1,19 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import HeroSection from "./components/hero";
-import Navbar from "./components/navbar";
+import HomePage from "./components/pages/home";
+import Resources from "./components/pages/resources";
+import Toolkit from "./components/pages/toolkit";
+import AppLayout from "./components/ui/layout";
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <HeroSection />
-    </>
+    <Routes>
+      <Route element={<AppLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/toolkit" element={<Toolkit />} />
+      </Route>
+    </Routes>
   );
 }
 
