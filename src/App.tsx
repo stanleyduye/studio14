@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import AppLayout from "./components/layout";
 import HomePage from "./components/pages/home";
 import Resources from "./components/pages/resources";
 import Toolkit from "./components/pages/toolkit";
-import AppLayout from "./components/ui/layout";
 
 function App() {
   return (

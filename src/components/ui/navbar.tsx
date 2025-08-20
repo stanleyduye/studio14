@@ -5,7 +5,6 @@ import {
   Drawer,
   Flex,
   HStack,
-  IconButton,
   Image,
   Portal,
   Switch,
@@ -130,12 +129,7 @@ function Navbar() {
             </Flex>
             <Drawer.Root>
               <Drawer.Trigger asChild>
-                <IconButton
-                  display={{ base: "block", lg: "none" }}
-                  border={"none"}
-                >
-                  <MdMenu color="#3c3c3c" size={26} />
-                </IconButton>
+                <MdMenu color="#3c3c3c" size={30} />
               </Drawer.Trigger>
               <Portal>
                 <Drawer.Backdrop />

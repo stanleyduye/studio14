@@ -57,6 +57,18 @@ function ArticleCards() {
           mt={10}
           px={4}
         >
+          {filteredCards.length === 0 && (
+            <Flex align={"center"} justify={"center"} px={12}>
+              <Text
+                fontSize={{ base: 16, md: 20 }}
+                fontWeight={700}
+                color={"#404040"}
+                textAlign={"center"}
+              >
+                No results found
+              </Text>
+            </Flex>
+          )}
           {filteredCards.map((card, idx) => {
             const { title, topic, tag, type } = card;
             const iconSrc = iconMap[type];
@@ -125,13 +137,6 @@ function ArticleCards() {
             );
           })}
         </SimpleGrid>
-        {filteredCards.length === 0 && (
-          <Flex justify="center" align="center" height="200px">
-            <Text color="gray.500" fontSize="lg">
-              No articles match your filters
-            </Text>
-          </Flex>
-        )}
       </Flex>
     </Flex>
   );

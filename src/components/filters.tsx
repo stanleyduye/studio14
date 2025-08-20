@@ -178,7 +178,11 @@ const MobileFilter = ({
           <Menu.Positioner>
             <Menu.Content maxHeight="70vh" overflowY="auto">
               <Menu.ItemGroup>
-                <Menu.ItemGroupLabel fontWeight={700} fontSize={16}>
+                <Menu.ItemGroupLabel
+                  fontWeight={700}
+                  fontSize={16}
+                  textWrap={"nowrap"}
+                >
                   Key Foundational Principles
                 </Menu.ItemGroupLabel>
                 {foundationPrinciples.map(({ value }) => (
