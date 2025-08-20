@@ -14,7 +14,7 @@ import {
 import { BiChevronDown } from "react-icons/bi";
 import { MdMenu } from "react-icons/md";
 import { NavLink } from "react-router-dom";
-import logo from "../../assets/Asset 2 1.png";
+import logo from "../assets/Asset 2 1.png";
 
 const NavItem = ({
   to,
@@ -129,7 +129,9 @@ function Navbar() {
             </Flex>
             <Drawer.Root>
               <Drawer.Trigger asChild>
-                <MdMenu color="#3c3c3c" size={30} />
+                <Box display={{ base: "block", lg: "none" }}>
+                  <MdMenu color="#3c3c3c" size={36} />
+                </Box>
               </Drawer.Trigger>
               <Portal>
                 <Drawer.Backdrop />
