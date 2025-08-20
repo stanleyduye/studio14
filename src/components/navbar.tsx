@@ -115,7 +115,7 @@ function Navbar() {
               height={33}
             >
               <Avatar.Fallback
-                name="Jonathan A"
+                name="Stanley Duye"
                 color="black"
                 fontWeight={800}
                 fontSize={12}
@@ -123,7 +123,7 @@ function Navbar() {
             </Avatar.Root>
             <Flex align={"center "} gap={1} mdDown={{ display: "none" }}>
               <Text fontSize={16} fontWeight={600} color={"#525252"}>
-                Jonathan
+                Stanley
               </Text>
               <BiChevronDown />
             </Flex>

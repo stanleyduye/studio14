@@ -1,6 +1,7 @@
 import { Box, Card, Flex, Image, SimpleGrid, Text } from "@chakra-ui/react";
 
-import { cardData, getRandomImage } from "@/constants/data";
+import { getRandomImage } from "@/constants/data";
+import { useSearchContext } from "@/context/search";
 import { useMemo, useState } from "react";
 import ph_link from "../assets/humbleicons_link.png";
 import ph_pdf from "../assets/ph_file-pdf-duotone.png";
@@ -14,18 +15,19 @@ const iconMap = {
 } as const;
 
 function ArticleCards() {
+  const { searchResults } = useSearchContext();
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
 
   const filteredCards = useMemo(() => {
-    return cardData.filter((card) => {
+    return searchResults.filter((card) => {
       const matchesTag =
         selectedTags.length === 0 || selectedTags.includes(card.tag);
       const matchesType =
         selectedTypes.length === 0 || selectedTypes.includes(card.type);
       return matchesTag && matchesType;
     });
-  }, [selectedTags, selectedTypes]);
+  }, [selectedTags, selectedTypes, searchResults]);
 
   const handleFilterChange = (type: "tag" | "type", values: string[]) => {
     if (type === "tag") {

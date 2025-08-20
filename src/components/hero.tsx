@@ -1,11 +1,14 @@
-import { Flex, Input, InputGroup, Text, VStack } from "@chakra-ui/react";
-import { LuSearch } from "react-icons/lu";
+import { useSearchContext } from "@/context/search";
+import { Flex, Text, VStack } from "@chakra-ui/react";
+import SearchResources from "./search";
 
 interface Props {
   title: string;
 }
 
 function HeroSection({ title }: Props) {
+  const { setQuery } = useSearchContext();
+
   return (
     <Flex
       bg={"#fafafa"}
@@ -33,17 +36,7 @@ function HeroSection({ title }: Props) {
           commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae
           congue
         </Text>
-        <InputGroup startElement={<LuSearch />} mt={10}>
-          <Input
-            borderRadius={10}
-            border={{ base: "none", md: "1px solid #a1a1a1" }}
-            bg={"white"}
-            color={"#2C3237"}
-            maxWidth={"853px"}
-            width={{ base: "100%", md: "70vw" }}
-            placeholder="Search by title or keyword"
-          />
-        </InputGroup>
+        <SearchResources onSearch={setQuery} />
       </VStack>
     </Flex>
   );
