@@ -50,6 +50,5 @@ A React application for displaying and filtering article cards with search funct
    npm start
    # or
    yarn start
+   The application will be available at http://localhost:5173
    ```
-
-### The application will be available at http://localhost:5173
