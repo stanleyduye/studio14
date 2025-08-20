@@ -46,9 +46,11 @@ A React application for displaying and filtering article cards with search funct
    ```
 
 3. Start the development server:
+
    ```bash
    npm start
    # or
    yarn start
-   The application will be available at http://localhost:5173
+
+   The application will be available at http://localhost:5173 or depending on your configuration.
    ```
