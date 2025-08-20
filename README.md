@@ -19,6 +19,7 @@ A React application for displaying and filtering article cards with search funct
 - TypeScript
 - Chakra UI
 - Fuse.js for search functionality
+- use-debounce for debouncing input
 - React Icons
 
 ## Getting Started

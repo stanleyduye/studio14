@@ -9,7 +9,7 @@ interface SearchResourcesProps {
 function SearchResources({ onSearch }: SearchResourcesProps) {
   const debouncedSearch = useDebouncedCallback(
     (query: string) => onSearch(query),
-    300
+    500
   );
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     debouncedSearch(e.target.value);
