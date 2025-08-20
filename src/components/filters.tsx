@@ -136,20 +136,6 @@ const MobileFilter = ({
   onPrincipleChange,
   onTypeChange,
 }: MobileFilterProps) => {
-  const handlePrincipleToggle = (value: string) => {
-    const newValues = selectedTags.includes(value)
-      ? selectedTags.filter((v) => v !== value)
-      : [...selectedTags, value];
-    onPrincipleChange(newValues);
-  };
-
-  const handleTypeToggle = (value: string) => {
-    const newValues = selectedTypes.includes(value)
-      ? selectedTypes.filter((v) => v !== value)
-      : [...selectedTypes, value];
-    onTypeChange(newValues);
-  };
-
   return (
     <Flex
       bg={"#f1f1f1"}
@@ -185,34 +171,42 @@ const MobileFilter = ({
                 >
                   Key Foundational Principles
                 </Menu.ItemGroupLabel>
-                {foundationPrinciples.map(({ value }) => (
-                  <Menu.CheckboxItem
-                    key={value}
-                    value={value}
-                    checked={selectedTags.includes(value)}
-                    onSelect={() => handlePrincipleToggle(value)}
-                  >
-                    {value}
-                    <Menu.ItemIndicator />
-                  </Menu.CheckboxItem>
-                ))}
+                <CheckboxGroup
+                  value={selectedTags}
+                  onValueChange={onPrincipleChange}
+                >
+                  {foundationPrinciples.map(({ value }) => (
+                    <Menu.CheckboxItem
+                      key={value}
+                      value={value}
+                      checked={selectedTags.includes(value)}
+                    >
+                      {value}
+                      <Menu.ItemIndicator />
+                    </Menu.CheckboxItem>
+                  ))}
+                </CheckboxGroup>
               </Menu.ItemGroup>
               <Menu.Separator />
               <Menu.ItemGroup>
                 <Menu.ItemGroupLabel fontWeight={700} fontSize={16}>
                   Document type
                 </Menu.ItemGroupLabel>
-                {documentTypes.map(({ value }) => (
-                  <Menu.CheckboxItem
-                    key={value}
-                    value={value}
-                    checked={selectedTypes.includes(value)}
-                    onSelect={() => handleTypeToggle(value)}
-                  >
-                    {value}
-                    <Menu.ItemIndicator />
-                  </Menu.CheckboxItem>
-                ))}
+                <CheckboxGroup
+                  value={selectedTypes}
+                  onValueChange={onTypeChange}
+                >
+                  {documentTypes.map(({ value }) => (
+                    <Menu.CheckboxItem
+                      key={value}
+                      value={value}
+                      checked={selectedTypes.includes(value)}
+                    >
+                      {value}
+                      <Menu.ItemIndicator />
+                    </Menu.CheckboxItem>
+                  ))}
+                </CheckboxGroup>
               </Menu.ItemGroup>
               <Menu.Separator />
               <Menu.ItemGroup>

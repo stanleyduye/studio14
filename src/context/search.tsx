@@ -19,7 +19,7 @@ export function SearchProvider({ children }: SearchProviderProps) {
   const [searchResults, setSearchResults] = useState(cardData);
   const { setQuery } = useSearch({
     items: cardData,
-    keys: ["title", "topic", "tag"],
+    keys: ["title", "topic", "tag", "type"],
     onResults: setSearchResults,
   });
   return (
