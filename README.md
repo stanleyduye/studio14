@@ -52,15 +52,4 @@ A React application for displaying and filtering article cards with search funct
    yarn start
    ```
 
-## Project Structure
-
-studio14Assessment/
-├── src/
-│ ├── assets/ # Images and icons
-│ ├── components/ # React components
-│ ├── constants/ # Application constants and data
-│ ├── context/ # React context providers
-│ ├── hooks/ # Custom React hooks
-│ └── App.tsx # Root component
-├── public/ # Static files
-└── package.json # Project dependencies and scripts
+### The application will be available at http://localhost:5173
